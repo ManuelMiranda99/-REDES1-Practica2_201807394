@@ -120,3 +120,37 @@ El switch al ser un dispositivo inteligente cuenta con unas "reglas" o caracter�
 Es necesario mencionar que los dominios se "comparten" entre dispositivos. Con la imagen que detalla los cálculos se entenderá mejor.
 
 ![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/development/Imgs/CalculoDominios.png "Cálculo de dominios")
+
+## Capturas de paquetes
+
+Para la captura de paquetes se utilizó el software Wireshark y la opción de capturar paquetes que nos brinda GNS3. El procedimiento se detalla a continuación.
+
+### Ping extendido
+
+Primero se realizó un ping extendido en la máquina virtual. Es importante hacerla en esta, ya que las VPCS solo mandan 5 paquetes y terminan los envíos. La máquina virtual realiza envíos hasta que se le da Ctrl+C.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/Captura_Paquetes/PingExt.png "Ping extendido")
+
+### Entrar a capturar paquetes desde GNS3
+
+Para la captura de paquetes se debe de tener presente que todos los dispositivos estén iniciados. Se da click derecho en alguno de los cables y se le da a la opción de _Start capture_.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/Captura_Paquetes/GetOptPaq.png "Start Capture")
+
+Luego de darle click nos mostrará una ventana emergente a la que daremos click en _OK_.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/Captura_Paquetes/PackCapture.png "OK")
+
+Esto nos abrira Wireshark si lo instalamos durante el proceso de instalación de GNS3.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/Captura_Paquetes/StartCapture.png "Wireshark")
+
+### En Wireshark
+
+Este software nos muestra como se estan enviando paquetes en todos lados. No solo se encuentran los pings que hemos realizado, sino que también algunas comunicaciones entre otros dispositivos. Para ver los paquetes que estamos enviando desde nuestro ping extendido debemos de aplicar un filtro a los paquetes. En la parte superior de Wireshark, hay una caja de texto que dice **_Apply a display filter ..._**, ahí escribiremos icmp para ver solo los paquetes de los ping que realizamos.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/Captura_Paquetes/FilterPa.png "Apply filter")
+
+Como se puede observar los datos de nuestra _Source_ y nuestro _Destination_ coinciden con el ping extendido que realizamos. Además que muestra el tiempo en que se contesto y se puede dar doble click en algún paquete para ver este.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/Captura_Paquetes/infoPacket.png "Check package")
