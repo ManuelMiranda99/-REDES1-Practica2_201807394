@@ -89,3 +89,34 @@ Al igual que con las VPCS, se siguió el mismo procededimiento que en la prácti
 ![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/master/Imgs/VPCS/Informatica.png "Máquina Virtual")
 
 # Manual de Reportes
+
+## Cálculos de Dominios
+
+Para la realización de los cálculos de dominio de broadcast y de colisión se utilizaron las siguientes "reglas" que nos brindo el ingeniero durante las clases:
+
+### Dominios Router
+
+Por cada interfaz conectada el router cuenta con:
+
+* 1 dominio de colisión
+* 1 dominio de broadcast
+
+### Dominios HUB
+
+El HUB se puede decir que es el más sencillo de realizar los cálculos de todos. Debido a que es un dispositivo "tonto". Este cuenta con
+
+* 1 dominio de colisión
+* 1 dominio de broadcast
+
+Nótese que a diferencia del router, este es simplemente 1 de cada uno por dispositivo, no 1 de cada uno por interfaz conectada.
+
+### Dominios Switch
+
+El switch al ser un dispositivo inteligente cuenta con unas "reglas" o características distintas al HUB. Este tiene:
+
+* N dominios de colisión (Siendo N el número de puertos conectados)
+* 1 dominio de broadcast
+
+Es necesario mencionar que los dominios se "comparten" entre dispositivos. Con la imagen que detalla los cálculos se entenderá mejor.
+
+![alt-text](https://github.com/ManuelMiranda99/-REDES1-Practica2_201807394/blob/development/Imgs/CalculoDominios.png "Cálculo de dominios")
